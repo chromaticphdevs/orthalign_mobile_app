@@ -48,7 +48,7 @@ class _ResourceSliderScreenState extends State<ResourceSliderScreen> {
           children: [
             Spacer(),
             Container(
-              height: AppUtility.getVerticalSize(86),
+              height: AppUtility.getVerticalSize(context, 100),
               decoration: BoxDecoration(
                 image: DecorationImage(image: ExactAssetImage('assets/Images/headers/unlock_levers_top.png'),
                 fit: BoxFit.fill)
@@ -69,10 +69,10 @@ class _ResourceSliderScreenState extends State<ResourceSliderScreen> {
                 ),);
               }),
             ) : SizedBox(
-              height: AppUtility.getVerticalSize(463),
+              height: AppUtility.getVerticalSize(context, 100),
             ),
             Container(
-              height: AppUtility.getVerticalSize(86),
+              height: AppUtility.getVerticalSize(context, 100),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: ExactAssetImage('assets/Images/headers/common_bottem.png'),
