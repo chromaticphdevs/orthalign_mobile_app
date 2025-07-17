@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:orthalign/screens/resource_slider_screen.dart';
-import 'package:orthalign/screens/splash_screen.dart';
-
 class AgreementScreen extends StatefulWidget {
   const AgreementScreen({super.key});
 
@@ -46,6 +44,11 @@ class _AgreementScreenState extends State<AgreementScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Checkbox(value: isChecked, onChanged: (bool? value) {
+
+                if(isChecked) {
+                  return;
+                }
+
                 setState(() {
                   isChecked = value!;
                 });
@@ -56,7 +59,7 @@ class _AgreementScreenState extends State<AgreementScreen> {
                       MaterialPageRoute(builder: (context) => ResourceSliderScreen()));
                   });
                 }
-              }, checkColor: Colors.white, fillColor: WidgetStateProperty.resolveWith(getColor)),
+              },  checkColor: Colors.white, fillColor: WidgetStateProperty.resolveWith(getColor)),
               Text(
                 'I understand',
                 style: TextStyle(
