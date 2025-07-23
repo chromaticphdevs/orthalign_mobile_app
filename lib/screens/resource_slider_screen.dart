@@ -52,29 +52,17 @@ class _ResourceSliderScreenState extends State<ResourceSliderScreen> {
       _videoController = VideoPlayerController.asset(resourcePath);
       _initializeVideoFuture = _videoController!.initialize().then((_) {
         setState(() {
-          
+          _videoController!.setLooping(true);
+          _videoController!.play();
         });
       }).catchError((e) {
-        print("Error initializing video: $e");
       });
-      await _videoController!.setLooping(true);
-      await _videoController!.play();
-
-      print([
-        'video-is playing',
-        resourcePath
-      ]);
     }
   }
   void _onPageChanged() async{
     final newPage = _pageController.page?.round() ?? 0;
     if (newPage != _currentPage) {
       setState(() => _currentPage = newPage);
-      print([
-        'current Page',
-        newPage,
-        _currentPage
-      ]);
       videoInitializer(newPage);
     }
   }
